@@ -9,5 +9,11 @@
 <body>
     <h1>Trasporti</h1>
     @include('includes.navbar')
+    @forelse ($transports as $transport)
+        <div>Tipo di trasporto: {{ $transport->description }}</div>
+        <hr>
+    @empty
+        <div>Non ci sono trasporti</div>
+    @endforelse
 </body>
 </html>

@@ -9,6 +9,13 @@
 <body>
     <h1>Viaggi</h1>
     @include('includes.navbar')
-
+    @forelse ($travels as $travel)
+        <div>Destinazione: {{ $travel->destination }}</div>
+        <div>Prezzo: {{ $travel->price }}</div>
+        <div>Durata: {{ $travel->duration }} giorni</div>
+        <hr>
+    @empty
+        <div>Non ci sono viaggi</div>
+    @endforelse
 </body>
 </html>
